@@ -8,10 +8,17 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <!-- 继承自父工程后，不需要些groupId和version，使用夫工程的-->
+    <!-- 继承自父工程后，不需要些groupId和version，使用父工程的-->
     <artifactId>cloud-customer-order80</artifactId>
 
     <dependencies>
+        <!--这里是引入自己打成jar包的公共类，避免每个工程再次创建-->
+        <dependency>
+            <groupId>com.chen</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -27,6 +34,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
         </dependency>
     </dependencies>
     <properties>
