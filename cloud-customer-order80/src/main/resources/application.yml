@@ -1,3 +1,16 @@
 server:
+  #用户默认端口80，例如访问www.baidu.com，不需要加80.默认就是80端口
   port: 80
-#用户默认端口80，例如访问www.baidu.com，不需要加80.默认就是80端口
+
+spring:
+  application:
+    name: cloud-customer-order
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7001.com:7001/eureka/

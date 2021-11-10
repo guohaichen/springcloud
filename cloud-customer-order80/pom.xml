@@ -12,6 +12,12 @@
     <artifactId>cloud-customer-order80</artifactId>
 
     <dependencies>
+        <!--eureka客户端依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
         <!--这里是引入自己打成jar包的公共类，避免每个工程再次创建-->
         <dependency>
             <groupId>com.chen</groupId>

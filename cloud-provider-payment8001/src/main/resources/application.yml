@@ -4,7 +4,7 @@ server:
 spring:
   application:
     name: cloud-payment-service
-    #配置name是在微服务中给每一个模块设置一个名称
+    #配置name是在微服务中给每一个模块设置一个名称(对应eureka中的application name)
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource #当前数据源操作类型
     url: jdbc:mysql://localhost:3306/db2021?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -20,3 +20,15 @@ mybatis:
   #mapper.xml文件中resultMap的type、parameterType、resultType会引用实体类，我们需要写上全限定类名，
              #如果不写全限定类名，只写一个实体类的名称的话，mybatis:type-aliases-package参数；
   type-aliases-package: com.chen.springcloud.entity #所有entity别名类所在包
+
+
+#eureka-client配置
+eureka:
+  client:
+    #是否从EurekaServer抓取已有的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配合ribbon使用负载均衡
+    fetch-registry: true
+    #表示自己是否将注册进eureka，
+    register-with-eureka: true
+    service-url:
+      #defaultZone: http://localhost:7001/eureka(单机版)
+     defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7001.com:7001/eureka/
