@@ -31,13 +31,13 @@ public class PaymentController {
     }
 
     @PostMapping("/payment/addPayment")
-    public CommonResult<Payment> add(Payment payment){
+    public CommonResult<Integer> add(Payment payment){
         int result = paymentService.create(payment);
         if (result>0){
             log.info("共插入数据\t"+result+"条！");
-            return new CommonResult<>(200,"插入成功");
+            return new CommonResult<>(200,"插入成功",result);
         }log.info("插入失败!");
-        return new CommonResult<>(412,"插入失败");
+        return new CommonResult<>(412,"插入失败",result);
     }
 
 }
