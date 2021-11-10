@@ -10,7 +10,10 @@ spring:
     url: jdbc:mysql://localhost:3306/db2021?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
-    driver-class-name: com.alibaba.druid.proxy.DruidDriver #mysql驱动包
+#    driver-class-name: com.alibaba.druid.proxy.DruidDriver #mysql驱动包,使用这个驱动会报错。testWhileIdle is true, validationQuery not set
+    driver-class-name: com.mysql.jdbc.Driver
+
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

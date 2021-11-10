@@ -10,8 +10,13 @@ spring:
     url: jdbc:mysql://localhost:3306/db2021?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
-    driver-class-name: com.alibaba.druid.proxy.DruidDriver #mysql驱动包
+#    driver-class-name: com.alibaba.druid.proxy.DruidDriver #mysql驱动包
+    driver-class-name: com.mysql.jdbc.Driver
+
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+  #mapper.xml文件中resultMap的type、parameterType、resultType会引用实体类，我们需要写上全限定类名，
+             #如果不写全限定类名，只写一个实体类的名称的话，mybatis:type-aliases-package参数；
   type-aliases-package: com.chen.springcloud.entity #所有entity别名类所在包
