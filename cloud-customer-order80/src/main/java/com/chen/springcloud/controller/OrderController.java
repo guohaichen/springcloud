@@ -3,6 +3,7 @@ package com.chen.springcloud.controller;
 import com.chen.springcloud.entity.CommonResult;
 import com.chen.springcloud.entity.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,9 @@ public class OrderController {
     /**
      注意，这里一定要写http://
      */
-    private static final String PAYMENT_URL = "http://127.0.0.1:8001";
+    //private static final String PAYMENT_URL = "http://127.0.0.1:8001";//单机版本
+            /*这是paymentService8001，8002在eureka中注册的application name*/
+    private static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Autowired
     RestTemplate restTemplate;
