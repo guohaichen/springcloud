@@ -3,7 +3,6 @@ package com.chen.springcloud.controller;
 import com.chen.springcloud.entity.CommonResult;
 import com.chen.springcloud.entity.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +33,7 @@ public class OrderController {
     public CommonResult<Payment> getOrder(@PathVariable Long id){
         // 注意 getForObject中url的写法，url+id
         return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id,CommonResult.class);
+
     }
 
 }
