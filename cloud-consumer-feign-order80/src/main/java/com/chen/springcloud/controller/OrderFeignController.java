@@ -17,9 +17,14 @@ public class OrderFeignController {
     @Autowired
     PaymentFeignService paymentFeignService;
 
-
     @GetMapping("/customer/payment/get/{id}")
     public CommonResult<Payment> getOrderById(@PathVariable Long id){
         return paymentFeignService.getOrderById(id);
+    }
+
+
+    @GetMapping("/customer/payment/timeout")
+    public String paymentTimeout(){
+        return paymentFeignService.paymentFeignTimeout();
     }
 }
