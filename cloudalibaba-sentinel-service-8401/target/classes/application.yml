@@ -1,0 +1,26 @@
+server:
+  port: 8401
+spring:
+  application:
+    name: aloudalibaba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+    sentinel:
+      transport:
+        #配置sentinel大屏监视器
+        dashboard: localhost:8080
+        #默认8719端口，加入被占用会自加1，直到找到没有被占用的端口
+        port: 8719
+      log:
+        dir: E:\sentinel_log
+#表示actuator监控所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
