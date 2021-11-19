@@ -1,0 +1,17 @@
+server:
+  port: 9002
+#参考官网
+spring:
+  application:
+    name: nacos-payment-provider
+    #payment9001和payment9002的name相同，说明他们为同一个服务
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置nacos地址
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

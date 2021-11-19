@@ -1,0 +1,21 @@
+server:
+  port: 3377
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      #注意需要config
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+  application:
+    name: nacos-config-center
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+#nacos-config-center-dev-yml
