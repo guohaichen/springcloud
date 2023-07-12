@@ -10,6 +10,7 @@ spring:
         server-addr: localhost:8848
 
 
-#消费者将要去访问的微服务名称（注册成功进nacos的微服务提供者）
+# 消费者将要去访问的微服务名称（注册成功进nacos的微服务提供者）  这个service-provider.nacos-provider-service随意指定，
+#主要是能用@value读取到url值
 service-provider:
   nacos-provider-service: http://nacos-payment-provider

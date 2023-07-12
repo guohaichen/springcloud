@@ -8,9 +8,9 @@ spring:
       #注意需要config
       config:
         server-addr: localhost:8848
-        file-extension: yaml
+        file-extension: yml
   application:
-    name: nacos-config-center
+    name: nacos_config_center
 
 management:
   endpoints:

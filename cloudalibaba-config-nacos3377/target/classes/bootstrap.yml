@@ -10,7 +10,7 @@ spring:
         server-addr: localhost:8848
         file-extension: yaml
   application:
-    name: nacos-config-center
+    name: nacos_config_center
 
 management:
   endpoints:

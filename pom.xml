@@ -17,8 +17,8 @@
         <module>cloud-consumer-feign-order80</module>
         <module>cloudalibaba--provider-payment9001</module>
         <module>cloudalibaba-provider-payment9002</module>
-        <module>cloudalibaba-consumer-nacos-order83</module>
         <module>cloudalibaba-config-nacos3377</module>
+        <module>cloudalibaba-consumer-nacos-order83</module>
         <module>cloudalibaba-sentinel-service-8401</module>
     </modules>
     <packaging>pom</packaging>
@@ -109,6 +109,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>
